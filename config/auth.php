@@ -40,6 +40,14 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'toko' => [
+            'driver' => 'session',
+            'provider' => 'toko',
+        ],
+        'client' => [
+            'driver' => 'session',
+            'provider' => 'client',
+        ],
     ],
 
     /*
@@ -64,11 +72,15 @@ return [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
+        'toko' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\Toko::class),
+        ],
+        'client' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\Client::class),
+        ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
 
     /*

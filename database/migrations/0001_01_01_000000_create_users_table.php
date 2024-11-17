@@ -11,15 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('admin', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('no_telpon');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
-        });
 
         Schema::create('user', function (Blueprint $table) {
             $table->id();
@@ -28,41 +19,6 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('email')->unique();
             $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
-        });
-
-        Schema::create('product', function (Blueprint $table) {
-            $table->id();
-            $table->string('product_name');
-            $table->string('kategori');
-            $table->string('harga');
-            $table->string('code');
-            $table->string('stok');
-            $table->rememberToken();
-            $table->timestamps();
-        });
-
-        Schema::create('charts', function (Blueprint $table) {
-            $table->id();
-            $table->string('id_user');
-            $table->string('id_product');
-            $table->string('product_name');
-            $table->string('harga');
-            $table->string('code');
-            $table->string('status');
-            $table->rememberToken();
-            $table->timestamps();
-        });
-
-        Schema::create('payment', function (Blueprint $table) {
-            $table->id();
-            $table->string('id_user');
-            $table->string('id_product');
-            $table->string('product_name');
-            $table->string('harga');
-            $table->string('code_payment');
-            $table->string('status_payment');
             $table->rememberToken();
             $table->timestamps();
         });

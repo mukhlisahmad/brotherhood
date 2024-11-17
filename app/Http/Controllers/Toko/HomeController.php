@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Toko;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $user = Auth::guard('user')->user();
-        return view('user.home-index');
+        $user = Auth::guard('toko')->user();
+        return view('toko.home-index');
     }
 }
