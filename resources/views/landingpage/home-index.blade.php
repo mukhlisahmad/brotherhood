@@ -70,7 +70,7 @@
                         </ul>
 
                         <div class="ms-lg-3">
-                            <a class="btn custom-btn custom-border-btn" href="">
+                            <a class="btn custom-btn custom-border-btn" href="{{ route('auth.auth-index') }}">
                                 Login
                                 <i class="bi-arrow-up-right ms-2"></i>
                             </a>
@@ -95,7 +95,7 @@
                             </h1>
 
                             <p class="text-white mb-4 pb-lg-2">
-                                your <em>favourite</em> coffee daily lives.
+                                <em>Brotherhood</em>
                             </p>
 
                             <a class="btn custom-btn custom-border-btn smoothscroll me-3" href="#section_2">
@@ -122,19 +122,18 @@
                                 <video autoplay="" loop="" muted="" class="custom-video" poster="">
                                     <source src="videos/pexels-mike-jones-9046237.mp4" type="video/mp4">
 
-                                    Your browser does not support the video tag.
                                 </video>
 
                                 <div class="about-video-info d-flex flex-column">
                                     <h4 class="mt-auto">We Started Since 2009.</h4>
 
-                                    <h4>Best Cafe in Klang.</h4>
+                                    <h4></h4>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-lg-5 col-12 mt-4 mt-lg-0 mx-auto">
-                            <em class="text-white">Barista.co</em>
+                            <em class="text-white"></em>
 
                             <h2 class="text-white mb-3">Cafe KL</h2>
 
