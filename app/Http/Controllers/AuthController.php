@@ -10,7 +10,7 @@ use Str;
 use App\Models\WebSettings;
 use App\Models\User;
 use App\Models\Client;
-use App\Models\Toko;
+
 use Alert;
 class AuthController extends Controller
 {
@@ -26,10 +26,7 @@ class AuthController extends Controller
         }
 
         $data['web'] = webSettings::where('id', 1)->first();
-        $data['title'] = "Login - " . ($data['web']->ecomerce ?? 'Unknown name');
-        $data['menu'] = "Halaman Login";
-        $data['submenu'] = "SignIn to continue";
-        $data['subdesc'] = "Gunakan id unique anda untuk login...";
+        $data['title'] = "Login - " . ($data['web']->ecomerce ?? 'Tidak Ada Nama');
         return view('auth.login');
     }
     public function AuthSignInPost(Request $request)
@@ -56,7 +53,7 @@ class AuthController extends Controller
                 $fieldType = 'no_telpon';
             }
         } else {
-            $fieldType = 'unknown';  
+            $fieldType = 'unknown';
         }
         $user = null;
         $guard = null;
@@ -65,10 +62,10 @@ class AuthController extends Controller
             $guard = 'web';
         } elseif ($fieldType == 'tko_no_telpon'|| $fieldType == 'tko_email') {
             $user = Toko::where($fieldType, $login)->first();
-            $guard = 'toko'; 
+            $guard = 'toko';
         } elseif ($fieldType == 'cli_no_telpon'|| $fieldType == 'cli_email') {
             $user = Client::where($fieldType, $login)->first();
-            $guard = 'client'; 
+            $guard = 'client';
         }
         if (!$user) {
             Alert::error('Error', 'Akun tidak ditemukan');
@@ -90,15 +87,13 @@ class AuthController extends Controller
             return back();
         }
     }
-    
+
     // forgot pw
     public function AuthForgotPage()
     {
         $data['web'] = webSettings::where('id', 1)->first();
         $data['title'] = "Forgot Password  - " . ($data['web']->ecomerce ?? 'Unknown name');
         $data['menu'] = "Halaman Forgot Password";
-        $data['submenu'] = "SignIn to continue";
-        $data['subdesc'] = "Gunakan id unique anda untuk login...";
 
         return view('auth.auth-forgot', $data);
     }

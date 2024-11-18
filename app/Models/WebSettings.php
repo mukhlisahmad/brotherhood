@@ -7,8 +7,26 @@ use Illuminate\Database\Eloquent\Model;
 
 class WebSettings extends Model
 {
-    /** @use HasFactory<\Database\Factories\WebSettingsFactory> */
     use HasFactory;
 
-    protected $guarded = [];
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'web_settings';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'email',
+        'description',
+        'name',
+        'no_telpon',
+        'logo',
+        'header',
+    ];
 }

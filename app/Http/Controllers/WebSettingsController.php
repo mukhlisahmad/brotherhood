@@ -13,7 +13,10 @@ class WebSettingsController extends Controller
      */
     public function index()
     {
-        //
+        $data['web'] = webSettings::where('id', 1)->first();
+        $data['title'] = "";
+        $data['menu'] = "Halaman Utama";
+        return view('root.root-index', $data);
     }
 
     /**

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('description');
             $table->string('stok');
             $table->string('price');
-            $table->string('id_toko');
             $table->string('code');
             $table->timestamps();
         });

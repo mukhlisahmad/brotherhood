@@ -17,7 +17,6 @@ class ProductSeeder extends Seeder
             'description'       => 'laptop apik BGT',
             'alamat'       => 'almaat nya',
             'stok'       => '2000',
-            'id_toko'      => '1',
             'code'      => '345t',
         ]);
         \App\Models\Product::create([
@@ -25,7 +24,6 @@ class ProductSeeder extends Seeder
             'description'  => 'hp apik BGT',
             'alamat'       => 'almaat nya',
             'stok'       => '100',
-            'id_toko'      => '1',
             'code'      => '335t',
         ]);
     }
