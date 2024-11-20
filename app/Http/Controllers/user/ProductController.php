@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -8,9 +8,8 @@ use Auth;
 use App\Models\WebSettings;
 use App\Models\User;
 use App\Models\Product;
-use App\Models\Client;
 use RealRashid\SweetAlert\Facades\Alert;
-class HomeController extends Controller
+class ProductController extends Controller
 {
     public function index()
     {
@@ -18,7 +17,6 @@ class HomeController extends Controller
         $data['web'] = webSettings::where('id', 1)->first();
         $data['user'] = User::where('id', $user->id)->get();
         $data['product'] = Product::all();
-        $data['client'] = Client::all();
-        return view('user.home-index',$data);
+        return view('user.product.product-index',$data);
     }
 }

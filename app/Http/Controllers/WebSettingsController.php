@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\WebSettings;
 use App\Http\Requests\StoreWebSettingsRequest;
 use App\Http\Requests\UpdateWebSettingsRequest;
-
+use App\Models\WebSettings;
+use App\Models\User;
+use Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 class WebSettingsController extends Controller
 {
     /**
@@ -13,42 +14,12 @@ class WebSettingsController extends Controller
      */
     public function index()
     {
+        $user = Auth::guard('user')->user();
+        $data['user'] = User::where('id', $user->id)->get();
         $data['web'] = webSettings::where('id', 1)->first();
-        $data['title'] = "";
-        $data['menu'] = "Halaman Utama";
-        return view('root.root-index', $data);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreWebSettingsRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(WebSettings $webSettings)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(WebSettings $webSettings)
-    {
-        //
+        $data['title'] = "websettings";
+        $data['menu'] = "Halaman Setting web";
+        return view('root.settings-index', $data);
     }
 
     /**
@@ -59,11 +30,5 @@ class WebSettingsController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(WebSettings $webSettings)
-    {
-        //
-    }
+
 }

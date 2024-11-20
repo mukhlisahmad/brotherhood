@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\WebSettings;
 class WebSettingsSeeder extends Seeder
 {
     /**
@@ -11,10 +12,11 @@ class WebSettingsSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\WebSettings::create([
-            'email'       => 'ecommerce@gmail.com',
-            'description' => 'ecommerce',
-            'name'       => 'ecommerce',
+
+        WebSettings::factory()->create([
+            'email'       => 'brotherhood@gmail.com',
+            'description' => 'brotherhood',
+            'name'       => 'brotherhood',
             'no_telpon'  => '0087844372163',
             'logo'      => 'default.png',
             'header'    => 'tes',
